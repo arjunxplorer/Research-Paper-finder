@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+  }
+
+  body {
+    @apply bg-scholar-50 text-scholar-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 
+           bg-primary-600 text-white font-medium rounded-lg
+           hover:bg-primary-700 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-4 py-2
+           bg-scholar-100 text-scholar-700 font-medium rounded-lg
+           hover:bg-scholar-200 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-scholar-400 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-scholar-200
+           hover:shadow-md transition-shadow duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-scholar-300
+           bg-white text-scholar-900 placeholder-scholar-400
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           transition-all duration-200;
+  }
+
+  .toggle-active {
+    @apply bg-primary-600 text-white shadow-sm;
+  }
+
+  .toggle-inactive {
+    @apply bg-transparent text-scholar-600 hover:bg-scholar-100;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-scholar-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-scholar-300 rounded-full hover:bg-scholar-400;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-200 text-primary-900;
+}
+
