@@ -43,9 +43,11 @@ This guide will help you deploy both the frontend and backend for free.
 4. **Import your GitHub repository**
 5. **Configure the project**:
    - **Framework Preset**: Next.js (auto-detected)
-   - **Root Directory**: `frontend` (important!)
+   - **Root Directory**: Click "Edit" and set to `frontend` (important!)
    - **Build Command**: `npm run build` (auto-detected)
    - **Output Directory**: `.next` (auto-detected)
+   
+   ⚠️ **Important**: After importing, go to **Settings → General → Root Directory** and set it to `frontend`
 6. **Environment Variables** (add these):
    - `NEXT_PUBLIC_API_URL` = `https://your-backend-url.onrender.com`
      - ⚠️ You'll update this after deploying the backend
