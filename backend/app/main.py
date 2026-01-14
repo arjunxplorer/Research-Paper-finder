@@ -33,9 +33,17 @@ def create_app() -> FastAPI:
     )
     
     # Configure CORS
+    # Parse CORS origins from environment variable (comma-separated)
+    cors_origins = settings.cors_origins.split(",") if settings.cors_origins else ["*"]
+    # Allow all origins in production if "*" is specified
+    if "*" in cors_origins:
+        allow_origins = ["*"]
+    else:
+        allow_origins = [origin.strip() for origin in cors_origins]
+    
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+        allow_origins=allow_origins,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
