@@ -4,7 +4,23 @@
 
 // API base URL - defaults to localhost for development
 // In production, this should be set via NEXT_PUBLIC_API_URL environment variable
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// If not set in production, show a helpful error
+const getApiBaseUrl = (): string => {
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  if (!url) {
+    if (typeof window !== "undefined") {
+      // Client-side: show error
+      console.error(
+        "NEXT_PUBLIC_API_URL is not set. Please configure it in Vercel environment variables."
+      );
+    }
+    // Default to localhost for development
+    return "http://localhost:8000";
+  }
+  return url;
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 export interface Author {
   name: string;
