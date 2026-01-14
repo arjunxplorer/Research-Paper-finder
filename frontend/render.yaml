@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: best-papers-finder-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.x
+      - key: NEXT_PUBLIC_API_URL
+        value: https://your-backend.onrender.com  # Update this with your backend URL
