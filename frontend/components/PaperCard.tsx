@@ -203,7 +203,7 @@ export function PaperCard({ paper, rank }: PaperCardProps) {
                 {paper.numberOfPages && ` (${paper.numberOfPages} pages)`}
               </span>
             )}
-            {paper.citationCount !== null && (
+            {paper.citationCount != null && (
               <span className="flex items-center gap-1">
                 <Quote className="w-3.5 h-3.5" />
                 {paper.citationCount.toLocaleString()} citations

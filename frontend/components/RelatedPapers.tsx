@@ -67,7 +67,7 @@ export function RelatedPapers({ paperId, sourceIds }: RelatedPapersProps) {
                   </span>
                   <span className="text-xs text-scholar-500 block">
                     {paper.year}
-                    {paper.citationCount !== null &&
+                    {paper.citationCount != null &&
                       ` • ${paper.citationCount.toLocaleString()} citations`}
                   </span>
                 </div>
