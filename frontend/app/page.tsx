@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, BookOpen, TrendingUp, Filter, Star, MessageSquare } from "lucide-react";
+import { Search, BookOpen, TrendingUp, Filter, Star, MessageSquare, Lightbulb } from "lucide-react";
 import Link from "next/link";
 import { SearchFilters } from "@/components/SearchFilters";
 import { ResultsList } from "@/components/ResultsList";
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-scholar-900">
-                  Best Papers Finder
+                  PaperMesh
                 </h1>
                 <p className="text-xs text-scholar-500">
                   Discover top research papers
@@ -105,6 +105,14 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <Link
+                href="/guide"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-scholar-100 transition-colors text-scholar-700"
+                title="Search tips and guide"
+              >
+                <Lightbulb className="w-4 h-4" />
+                <span className="hidden sm:inline">Guide</span>
+              </Link>
               <Link
                 href="/bookmarks"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-scholar-100 transition-colors text-scholar-700"
